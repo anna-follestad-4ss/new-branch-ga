@@ -12,13 +12,19 @@ jobs:
   build:
     name: Create Branch
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Branch
-        id: create_branch
-        uses: peterjgrainger/action-create-branch@v2.2.0
+      - uses: actions/checkout@v3
+
+      - name: Make release and generate notes
+        run: |
+          gh release create $VERSION_NUMBER --title "$VERSION_NUMBER ($(date +'%d %B %Y'))" --generate-notes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          branch: 'release-notes'
+
+      - name: create my branch 
+        run: |
+          git switch "my new branch"
+          git push -u origin "my new branch"
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
