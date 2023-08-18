@@ -15,13 +15,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Make release and generate notes
-        run: |
-          gh release create $VERSION_NUMBER --title "$VERSION_NUMBER ($(date +'%d %B %Y'))" --generate-notes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: create my branch 
         run: |
           git switch "my new branch"
