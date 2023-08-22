@@ -18,6 +18,6 @@ jobs:
           date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
-          gid add - 
+          git add - 
           git commit -m "generated"
           git push origin/my_new_branch
