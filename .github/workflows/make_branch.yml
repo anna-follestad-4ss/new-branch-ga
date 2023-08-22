@@ -2,9 +2,17 @@ on:
   workflow_dispatch:
     inputs:
       version_number:
-        description: Version number
+        description: Project name, no spaces [NNNN-cable-study]
         required: False
         type: string
+      project_type:
+        description: Choose project type
+        required: True
+        type: choice
+        options:
+          - windtools
+          - linetools 
+          - both 
       
 name: Create Branch
 
