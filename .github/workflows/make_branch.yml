@@ -12,12 +12,12 @@ jobs:
   build:
     name: Create Branch
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-      - name: create my branch 
-        run: |
-          git branch "my_new_branch"
-          git push -u origin "my_new_branch"
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+        "date" > generated.txt
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        gid add - 
+        git commit -m "generated"
+        git push origin/my_new_branch
