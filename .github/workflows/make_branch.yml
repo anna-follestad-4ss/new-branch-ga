@@ -15,9 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-        "date" > generated.txt
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        gid add - 
-        git commit -m "generated"
-        git push origin/my_new_branch
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          gid add - 
+          git commit -m "generated"
+          git push origin/my_new_branch
