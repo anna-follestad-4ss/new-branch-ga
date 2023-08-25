@@ -13,6 +13,14 @@ on:
           - windtools
           - linetools 
           - both 
+      include_this_template:
+        description: Choose whether you want this template
+        required: False
+        type: boolean
+      include_another_template:
+        description: Option for a second template
+        required: False
+        type: boolean
       
 name: Create Branch
 
